@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+description = 'Auction House'
+
+mainClassName = 'com.vlr.tech.tm.AuctionHouse'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = "AuctionHouse"
+    version = "1.0"
+    manifest {
+        attributes 'Implementation-Title': 'Auction House',
+                   'Implementation-Version': version,
+                   'Main-Class': 'com.vlr.tech.tm.AuctionHouse'
+    }
+}
+
+dependencies {
+    testImplementation     'junit:junit:4.13'
+}
+
+test {
+    testLogging.showStandardStreams = true
+}
+
+test
